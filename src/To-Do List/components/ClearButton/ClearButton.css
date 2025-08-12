@@ -1,0 +1,28 @@
+.clear-button {
+    background-color: #99B898;
+    color: #2A363B;
+    font-family: 'Funnel Display', sans-serif;
+    margin-left: 30px;
+  
+    /* Prevent button from growing too tall */
+    height: 40px; /* fixed height */
+    padding: 4px; /* horizontal padding only */
+  
+    font-size: 18px; /* larger text */
+    line-height: 40px; /* match height to center text vertically */
+  
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .clear-button:hover {
+    background-color: #80a07f;
+    color: #2A363B;
+  }
+
+  .clear-button:focus {
+    outline: none;
+  }
+  

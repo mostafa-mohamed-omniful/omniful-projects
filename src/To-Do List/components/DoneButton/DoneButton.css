@@ -1,0 +1,28 @@
+.done-button {
+    background-color: #FECEA8; /* salmon */
+    color: #2A363B;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #e2b087; /* deeper salmon shadow */
+    transition: all 0.15s ease-in-out;
+  }
+  
+  .done-button:hover {
+    background-color: #E8B890; /* lighter salmon for hover */
+    box-shadow: 0 2px 0 #e2b087;
+    transform: translateY(-1px);
+  }
+  
+  .done-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #e2b087;
+  }
+
+  .done-button:focus {
+    outline: none;
+  }
+  

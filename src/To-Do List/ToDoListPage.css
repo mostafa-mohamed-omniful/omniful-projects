@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+  body {
+    background-color: #2A363B;
+  }
+  
+  .input-terminal {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+  }
+  

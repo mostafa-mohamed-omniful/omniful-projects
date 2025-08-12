@@ -1,0 +1,10 @@
+.done-list {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 25px;
+    color: #99B898;
+    list-style-type: none; /* Removes bullet point */
+    margin-bottom: 12px; /* Adds space between list items */
+    padding: 8px 0; /* Optional: adds vertical padding */
+    font-size: 18px;
+  }
+  
