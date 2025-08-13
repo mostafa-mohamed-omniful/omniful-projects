@@ -1,5 +1,4 @@
 import './Hero.css';
-import { getImageUrl } from '../../utils';
 import boy from '../../assets/boy.png';
 
 export const Hero = () => {
