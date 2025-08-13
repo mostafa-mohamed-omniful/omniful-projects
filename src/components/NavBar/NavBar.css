@@ -1,3 +1,25 @@
+/* CSS Reset for Navigation */
+.navbar *,
+.navbar *::before,
+.navbar *::after {
+    box-sizing: border-box;
+}
+
+.navbar ul,
+.navbar ol {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .navbar {
     display: flex;
     position: relative;
@@ -28,7 +50,6 @@
     color: beige;
     display: flex;
     gap: 20px;
-    list-style: none;
 }
 
 .moreBtn {
@@ -52,7 +73,6 @@
         align-items: flex-end;
         gap: 10px;
         z-index: 3;
-
     }
 
     .moreBtn {
@@ -67,12 +87,29 @@
         gap: 10px;
         border-radius: 20px;
         background: blue;
-        padding: 20px, 20px;
-
+        padding: 20px;
     }
 
     .items.open {
         display: flex;
         z-index: 1;
+    }
+
+    .items li {
+        list-style: none !important;
+        list-style-type: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .items li a {
+        display: block !important;
+        color: beige;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
     }
 }
