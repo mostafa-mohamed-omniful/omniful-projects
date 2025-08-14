@@ -33,6 +33,7 @@
     padding-right: 10%;
     box-sizing: border-box;
     flex-direction: row;
+    /* height: 15vh; */
 }
 
 .title {
