@@ -1,10 +1,18 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #44576d;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .title {
     position: relative;
     font-size: 2rem;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
-    margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -26,30 +34,125 @@
     padding: 10px;
     font-size: 16px;
     font-weight: 600;
-    color: #fff;
-    background-color: #44576d;
-}
-
-.search-icon {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    border: 1px solid #fff;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background-color: #44576d;
+    color: #000000;
+    background-color: #ffffff;
 }
 
 .search-button {
-    width: 20px;
-    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
     border-radius: 10px;
     border: 1px solid #fff;
     padding: 10px;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
+    background-color: #ffffff;
+}
+
+.search-button:hover {
+    background-color: #a9aaac;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.filter-label {
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.filter-select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
     background-color: #44576d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:hover {
+    background-color: #5a6b7d;
+    border-color: #a9aaac;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Style for active filter (when not "all") */
+.filter-select:not([value="all"]) {
+    background-color: #2563eb;
+    border-color: #1d4ed8;
+}
+
+.active-filter-indicator {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.welcome-cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.welcome-message {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.cart-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-button {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cart-button:hover {
+    background-color: #a9aaac;
+    color: #ffffff;
+}
+
+.cart-button.active {
+    background-color: #2563eb;
+    border-color: #1d4ed8;
+    color: white;
+}
+
+.cart-count {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5px;
 }

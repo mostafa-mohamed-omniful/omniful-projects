@@ -11,6 +11,7 @@ export default function Projects() {
         <div><Link className='todo-link' to="/todo-list">📝To Do List📝</Link></div>
         <div><Link className='tic-link' to="/tic-tac-toe">#️⃣Tic Tac Toe#️⃣</Link></div>
         <div><Link className='infinite-link' to="/infinite-scroll">♾️⬇️Infinite Scroll⬇️♾️</Link></div>
+        <div><Link className='demo-link' to="/demo">🛒Demo E-commerce🛒</Link></div>
       </div>
       </>
     );

@@ -19,3 +19,16 @@
     font-weight: 600;
     color: beige;
 }
+
+.demo-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Position the cart dropdown relative to the navbar */
+.demo-container .cart-dropdown {
+  position: absolute;
+  top: 80px; /* Adjust based on navbar height */
+  right: 20px;
+  z-index: 1000;
+}
