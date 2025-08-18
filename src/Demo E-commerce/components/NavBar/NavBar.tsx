@@ -29,8 +29,9 @@ export const NavBar = ({ searchTerm, onSearchChange, filterCategory, onFilterCha
                 🔍
                 </button>
             </div>
-            <div className="tenant-select">
-                <label className="filter-label">Filter:</label>
+            <div className="filter-container">
+            <div className="filter-select-container">
+            <label className="filter-label">Filter:</label>
             <select 
                 className="filter-select"
                 value={filterCategory}
@@ -40,6 +41,7 @@ export const NavBar = ({ searchTerm, onSearchChange, filterCategory, onFilterCha
                 <option value="electronics">Electronics</option>
                 <option value="jewelery">Jewelery</option>
             </select>
+            </div>
             {filterCategory !== 'all' && (
                 <span className="active-filter-indicator">
                     Showing: {filterCategory}
