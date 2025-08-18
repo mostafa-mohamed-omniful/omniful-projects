@@ -16,7 +16,7 @@ export const NavBar = ({ searchTerm, onSearchChange, filterCategory, onFilterCha
     
     return (
         <nav className="navbar">
-            <Link className="title" to="/demo">Tifa's Store</Link>
+            <Link className="title2" to="/demo">Tifa's Store</Link>
             <div className="search-box">
                 <input 
                     className="search-input" 
