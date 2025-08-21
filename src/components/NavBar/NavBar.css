@@ -1,25 +1,3 @@
-/* CSS Reset for Navigation */
-.navbar *,
-.navbar *::before,
-.navbar *::after {
-    box-sizing: border-box;
-}
-
-.navbar ul,
-.navbar ol {
-    list-style: none !important;
-    list-style-type: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.navbar li {
-    list-style: none !important;
-    list-style-type: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 .navbar {
     display: flex;
     position: relative;
@@ -33,7 +11,6 @@
     padding-right: 10%;
     box-sizing: border-box;
     flex-direction: row;
-    /* height: 15vh; */
 }
 
 .title {
@@ -45,72 +22,48 @@
 .menu {
     display: flex;
     color: beige;
+    position: relative; /* Add this to contain the absolutely positioned items */
 }
 
 .items {
     color: beige;
     display: flex;
     gap: 20px;
+    list-style: none;
+    margin-right: 7px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a3a4b;
+    position: absolute; /* Make it absolutely positioned */
+    top: 100%; /* Position it below the menu */
+    right: 0; /* Align to the right */
+    z-index: 10; /* Ensure it appears above other content */
+    min-width: 150px; /* Give it a minimum width */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow for better visibility */
 }
 
-.moreBtn {
-    display: none;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+.items li {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
 }
 
-@media screen and (max-width: 830px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.items li a {
+    color: beige;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+}
 
-    .menu {
-        position: absolute;
-        right: 0;
-        margin-right: 10%;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 10px;
-        z-index: 3;
-    }
-
-    .moreBtn {
-        display: block;
-        cursor: pointer;
-    }
-    
-    .items {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        border-radius: 20px;
-        background: blue;
-        padding: 20px;
-    }
-
-    .items.open {
-        display: flex;
-        z-index: 1;
-    }
-
-    .items li {
-        list-style: none !important;
-        list-style-type: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .items li a {
-        display: block !important;
-        color: beige;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 8px 16px;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-    }
+.items li a:hover {
+    background-color: rgba(255,255,255,0.1);
 }

@@ -1,10 +1,10 @@
 import './Hero.css';
-import boy from '../../assets/boy.png';
+import profile from '../../assets/Profile.png';
 import { motion } from 'framer-motion';
 
 export const Hero = () => {
     return (
-        <section className="container">
+        <section className="hero-container">
             <div className="content">
                 <h1 className="title">Hi, I'm Mostafa</h1>
                 <motion.p 
@@ -19,7 +19,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.5, delay: 1 }}
                 className="image" 
-                src={boy} 
+                src={profile} 
                 alt="Hero" />
         </section>
     )

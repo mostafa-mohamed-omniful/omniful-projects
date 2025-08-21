@@ -10,7 +10,6 @@ import { Experience } from './Pages/Experience.tsx';
 import { Hero } from './components/Hero/Hero.tsx';
 import { Contact } from './components/Contact/Contact.tsx';
 import { Demo } from './Demo E-commerce/Demo.tsx';
-
 function Home() {
   return (
     <>

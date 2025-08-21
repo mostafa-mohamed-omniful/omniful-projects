@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import more from '../../assets/more.png';
-import arrow from '../../assets/arrow.png';
+import { AnimatedHamburgerButton } from '../AnimatedHamburgerButton/AnimatedHamburgerButton';
 
 export const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,15 +9,15 @@ export const NavBar = () => {
     <nav className='navbar'>
         <Link className='title' to="/">Portfolio</Link>
         <div className='menu'>
-            <img className='moreBtn' src={isOpen ? arrow : more} alt="menu" onClick={() => setIsOpen(!isOpen)} />
-        <ul className={`items${isOpen ? 'open' : ''}`}>
-            <li>
-                <Link to="/experience">Experience</Link>
-            </li>
-            <li>
-                <Link to="/projects">Projects</Link>
-            </li>
-        </ul>
+            {isOpen && <ul className='items'>
+                <li>
+                    <Link to="/experience">Experience</Link>
+                </li>
+                <li>
+                    <Link to="/projects">Projects</Link>
+                </li>
+            </ul>}
+            <AnimatedHamburgerButton onClick={() => setIsOpen(!isOpen)}/>
         </div>
     </nav>
   )

@@ -1,4 +1,4 @@
-.container {
+.hero-container {
     position: relative;
     display: flex;
     align-items: center;
@@ -7,7 +7,6 @@
     margin-left: 10%;
     z-index: 1;
     margin-right: 10%;
-
 }
 
 .content {
@@ -39,4 +38,67 @@
     z-index: 1;
     margin-right: 5%;
     margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+/* Responsive breakpoint for screens less than 900px */
+@media screen and (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .content {
+        align-items: center;
+        margin-bottom: 30px;
+        order: 1; /* Content appears first */
+    }
+    
+    .title {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .description {
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.6;
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+    
+    .image {
+        order: 2; /* Image appears second */
+        width: 35%;
+        height: 35%;
+        margin: 0 auto 20px auto;
+        border-radius: 15px;
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media screen and (max-width: 600px) {
+    .hero-container {
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 20px;
+    }
+    
+    .title {
+        font-size: 28px;
+    }
+    
+    .description {
+        font-size: 16px;
+        max-width: 95%;
+    }
+    
+    .image {
+        width: 45%;
+        height: 45%;
+    }
 }
