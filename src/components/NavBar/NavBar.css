@@ -11,6 +11,7 @@
     padding-right: 10%;
     box-sizing: border-box;
     flex-direction: row;
+    height: 150px;
 }
 
 .title {
