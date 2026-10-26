@@ -1,25 +1,10 @@
-import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import NotFoundPage from './Pages/NotFoundPage';
+import Home from './Pages/Home';
 import ToDoListPage from './To-Do List/ToDoListPage.tsx';
 import TicTacToe from './Tic-Tac-Toe/TicTacToe.tsx';
 import InfiniteScroll from './InfiniteScroll/InfiniteScroll.tsx';
-import Projects from './Pages/Projects.tsx';
-import { NavBar } from './components/NavBar/NavBar.tsx';
-import { Experience } from './Pages/Experience.tsx';
-import { Hero } from './components/Hero/Hero.tsx';
-import { Contact } from './components/Contact/Contact.tsx';
 import { Demo } from './Demo E-commerce/Demo.tsx';
-function Home() {
-  return (
-    <>
-    <NavBar />
-    <Hero />
-    <Contact />
-    </>
-    
-  );
-}
 
 const router = createBrowserRouter([{
   path: '/',
@@ -35,21 +20,17 @@ const router = createBrowserRouter([{
   path: '/infinite-scroll',
   element: <InfiniteScroll />,
 }, {
+  // The projects and experience pages are now sections of the home page.
   path: '/projects',
-  element: <Projects />,
+  element: <Navigate to="/#work" replace />,
 }, {
   path: '/experience',
-  element: <Experience />,
+  element: <Navigate to="/#experience" replace />,
 }, {
   path: '/demo',
   element: <Demo />,
 }])
 
 export default function App() {
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
-

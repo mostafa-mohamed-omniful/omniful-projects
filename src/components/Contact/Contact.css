@@ -1,170 +1,125 @@
-.contact-container {
+.contact {
+    padding: clamp(120px, 11vw, 160px) var(--margin) clamp(96px, 8vw, 120px);
+}
+
+.contact-inner {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.contact-prompt {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    color: beige;
-    background: linear-gradient(135deg, #4a4a4a 0%, #2a3a4b 50%, #1a2a3b 100%);
-    min-height: 50vh; /* Changed from fixed height to min-height */
-    width: 100%;
-    position: relative;
-    overflow: visible; /* Changed from hidden to visible */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    padding: 40px 20px; /* Added padding for better spacing */
-}
-
-/* Add subtle animated background pattern */
-.contact-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Floating elements styling */
-.contact-floating {
-    pointer-events: none;
-    filter: blur(0.5px);
-    z-index: 1;
-}
-
-.contact-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 2px;
-    background: linear-gradient(45deg, #f5f5dc, #e6e6b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.contact-list {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch; /* keep every card as wide as the widest one */
-    justify-content: center;
-    list-style: none;
-    gap: 25px;
-    position: relative;
-    z-index: 2;
-}
-
-.contact-list li {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px 30px;
-    min-width: 300px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-.contact-list li:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.contact-list-title {
-    justify-content: center;
-    display: flex;
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #f0f0f0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact-link {
-    color: inherit;
-}
-
-.contact-value {
-    font-size: 1.1rem;
-    color: #e6e6b8;
     margin: 0;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-family: var(--font-text);
+    font-size: var(--step-lead);
+    font-weight: 600;
+    line-height: 1.3;
 }
 
-.contact-list li:hover .contact-value {
-    color: #f5f5dc;
+.contact-prompt-soft {
+    color: var(--muted);
 }
 
-.contact-icon {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 10px;
-    opacity: 0.8;
+.contact-form {
+    position: relative;
+    margin-top: 28px;
 }
 
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .contact-container {
-        min-height: 60vh; /* Increased height for mobile */
-        margin-top: 30px;
-        padding: 30px 15px;
-    }
-    
-    .contact-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-    
-    .contact-list li {
-        min-width: 250px;
-        padding: 15px 20px;
-    }
-    
-    .contact-list-title {
-        font-size: 1.1rem;
-    }
-    
-    .contact-value {
-        font-size: 1rem;
-    }
+/* The only bright surface in view; the accent ring appears on focus. */
+.contact-input {
+    width: 100%;
+    height: 64px;
+    padding: 0 68px 0 20px;
+    border: 0;
+    border-radius: 0;
+    background-color: var(--lightest);
+    color: var(--accent-ink);
+    font-family: var(--font-text);
+    font-size: var(--step-body);
+    outline: none;
+    transition: box-shadow 0.2s var(--ease-out);
 }
 
-@media screen and (max-width: 480px) {
-    .contact-container {
-        min-height: 70vh; /* Further increased height for small mobile */
-        padding: 25px 10px;
+.contact-input::placeholder {
+    color: var(--lightest-muted);
+}
+
+.contact-input:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--surface); /* taste-skill-ignore: the focus ring, not a shadow */
+}
+
+.contact-submit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--bg);
+    color: var(--ink);
+    cursor: pointer;
+    transition: background-color 0.2s var(--ease-out), transform 0.15s var(--ease-out);
+}
+
+.contact-submit:hover {
+    background-color: var(--surface);
+}
+
+.contact-submit:active {
+    transform: scale(0.94);
+}
+
+.contact-hint {
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: var(--step-small);
+}
+
+.contact-details {
+    display: grid;
+    gap: 12px;
+    margin: 72px 0 0;
+    font-size: var(--step-body);
+}
+
+.contact-details > div {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 16px;
+}
+
+.contact-details dt {
+    color: var(--muted);
+}
+
+.contact-details dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 760px) {
+    .contact {
+        padding: 140px var(--margin) 120px;
     }
-    
-    .contact-title {
-        font-size: 1.8rem;
-        letter-spacing: 1px;
-        margin-bottom: 25px;
+
+    .contact-input {
+        height: 60px;
     }
-    
-    .contact-list li {
-        min-width: 200px;
-        padding: 12px 15px;
-        margin-bottom: 15px; /* Added margin between cards */
+
+    .contact-submit {
+        top: 8px;
     }
-    
-    .contact-list {
-        gap: 20px; /* Reduced gap for small screens */
+
+    .contact-details {
+        gap: 20px;
+    }
+
+    .contact-details > div {
+        grid-template-columns: 1fr;
+        gap: 2px;
     }
 }

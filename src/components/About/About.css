@@ -1,0 +1,47 @@
+.about {
+    padding: var(--section-gap) var(--margin) clamp(96px, 10vw, 160px);
+    background-color: var(--field);
+    color: var(--field-ink);
+}
+
+.about-letter {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.about-portrait {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.about-heading {
+    margin: 28px 0 32px;
+    font-size: var(--step-head);
+}
+
+.about-letter p {
+    margin: 0 0 1.55em;
+    line-height: 1.6;
+}
+
+.about-letter .about-signature {
+    margin: 2.5em 0 0;
+    font-size: var(--step-lead);
+    font-weight: 600;
+}
+
+.about-letter .about-role {
+    margin: 0;
+    color: var(--field-muted);
+    font-size: var(--step-small);
+}
+
+@media screen and (max-width: 760px) {
+    .about-portrait {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,0 +1,170 @@
+/* The portfolio's tokens and base styles. Scoped to .site so the demo apps keep their own look. */
+body:has(.site) {
+    background-color: #2a363b;
+}
+
+/* The site's original slate and beige. */
+.site {
+    --bg: #2a363b;
+    --surface: #44576d;
+    --lightest: #f5f5dc;
+    --lightest-muted: #5b6a70;
+    --ink: #f5f5dc;
+    --muted: #c9c9b0;
+    --accent: #f5f5dc;
+    --accent-pressed: #ccccA6;
+    --accent-ink: #2a363b;
+    --field: #44576d;
+    --field-ink: #f5f5dc;
+    --field-muted: #d4d4bd;
+
+    --font-display: 'Rokkitt', Georgia, serif;
+    --font-text: 'Funnel Display', system-ui, sans-serif;
+
+    --step-small: clamp(0.875rem, 0.84rem + 0.15vw, 1rem);
+    --step-body: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+    --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+    --step-head: clamp(2rem, 1.3rem + 3.6vw, 4.5rem);
+    --step-display: clamp(3rem, 11vw, 10rem);
+
+    --margin: clamp(16px, 2.2vw, 32px);
+    --section-gap: clamp(112px, 13vw, 200px);
+    --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-text);
+    font-size: var(--step-body);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* index.css styles every link for the demo apps; reset that inside the portfolio. */
+.site a {
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-thickness 0.2s var(--ease-out);
+}
+
+.site a:hover {
+    color: inherit;
+    text-decoration-thickness: 2px;
+}
+
+.site :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.site-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.85;
+}
+
+/* Navigation links: no underline at rest; on hover or focus the text brightens and a line draws in. */
+.site a.site-navlink {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: color 0.25s var(--ease-out);
+}
+
+.site a.site-navlink::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    left: 0;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.site a.site-navlink:hover,
+.site a.site-navlink:focus-visible {
+    color: var(--ink);
+}
+
+.site a.site-navlink:hover::after,
+.site a.site-navlink:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.site-button {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 56px;
+    padding: 0 28px 0 26px;
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: var(--accent-ink);
+    font-family: var(--font-text);
+    font-size: var(--step-body);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), transform 0.15s var(--ease-out);
+}
+
+.site a.site-button {
+    display: inline-flex;
+    color: var(--accent-ink);
+    text-decoration: none;
+}
+
+.site-button svg {
+    flex: none;
+}
+
+.site-button-arrow {
+    transition: transform 0.3s var(--ease-out);
+}
+
+.site a.site-button:hover,
+.site-button:hover {
+    background-color: var(--surface);
+    color: var(--ink);
+}
+
+.site-button:hover .site-button-arrow {
+    transform: translateX(4px);
+}
+
+.site-button:active {
+    transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site a.site-navlink::after,
+    .site-button-arrow {
+        transition: none;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}

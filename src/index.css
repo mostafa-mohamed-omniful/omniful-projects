@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
-
 * {
   box-sizing: border-box;
+}
+
+/* The demo apps' type, set on every element as before; the portfolio (.site) sets its own. */
+:where(:not(.site, .site *)) {
   font-family: 'Funnel Display', sans-serif;
   line-height: 1.5;
   font-weight: 500;
+}
+
+body {
+  margin: 0;
+  background-color: #2A363B;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,9 +34,4 @@ a {
 }
 a:hover {
   color: rgb(204, 204, 166);
-}
-
-body {
-  margin: 0;
-  background-color: #2A363B;
 }

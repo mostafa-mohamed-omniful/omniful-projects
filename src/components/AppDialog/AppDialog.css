@@ -1,0 +1,84 @@
+.app-dialog {
+    width: min(1100px, calc(100vw - 2 * var(--margin)));
+    max-width: none;
+    height: calc(100svh - 2 * var(--margin));
+    max-height: none;
+    padding: 0;
+    border: 0;
+    background-color: var(--bg);
+    color: var(--ink);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35); /* taste-skill-ignore: a modal dialog really floats */
+}
+
+.app-dialog[open] {
+    display: flex;
+    flex-direction: column;
+    animation: app-dialog-in 0.35s var(--ease-out);
+}
+
+.app-dialog::backdrop {
+    background-color: rgba(20, 4, 6, 0.6);
+}
+
+@keyframes app-dialog-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+}
+
+.app-dialog-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 56px;
+    padding: 0 8px 0 20px;
+    font-size: var(--step-small);
+}
+
+.app-dialog-title {
+    margin: 0 auto 0 0;
+    font-family: var(--font-text);
+    font-size: var(--step-body);
+    font-weight: 600;
+}
+
+.app-dialog-close {
+    min-height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: var(--accent-ink);
+    font-family: var(--font-text);
+    font-size: var(--step-small);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.app-dialog-close:hover {
+    background-color: var(--accent-pressed);
+}
+
+.app-dialog-frame {
+    flex: 1;
+    width: 100%;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-dialog[open] {
+        animation: none;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .app-dialog {
+        width: 100vw;
+        height: 100svh;
+    }
+
+    .app-dialog-full {
+        display: none;
+    }
+}
