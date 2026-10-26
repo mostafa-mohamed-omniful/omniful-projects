@@ -1,9 +1,12 @@
-.navbar {
+.store-navbar {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: space-between;
     background-color: #44576d;
-    padding: 20px;
+    padding: 30px 10% 20px;
+    height: 150px;
+    z-index: 2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -157,10 +160,13 @@
     color: white;
 }
 
-.cart-count {
+.cart-badge {
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
+    background-color: #2563eb;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
     text-align: center;
     margin-top: 5px;
 }

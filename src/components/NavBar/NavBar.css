@@ -9,15 +9,19 @@
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 20px;
     box-sizing: border-box;
     flex-direction: row;
     height: 150px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.navbar-title {
     font-size: 30px;
     font-weight: 600;
     color: beige;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .menu {

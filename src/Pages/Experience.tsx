@@ -7,7 +7,7 @@ export const Experience = () => {
         <>
             <NavBar />
             <div>
-                <h1 className="title">Experience</h1>
+                <h1 className="experience-title">Experience</h1>
                 <ul className="experience-container">
                     <div className="education-container">
                         <h2 className="education-title">Education</h2>

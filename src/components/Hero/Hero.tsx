@@ -6,7 +6,7 @@ export const Hero = () => {
     return (
         <section className="hero-container">
             <div className="content">
-                <h1 className="title">Hi, I'm Mostafa</h1>
+                <h1 className="hero-title">Hi, I'm Mostafa</h1>
                 <motion.p 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}

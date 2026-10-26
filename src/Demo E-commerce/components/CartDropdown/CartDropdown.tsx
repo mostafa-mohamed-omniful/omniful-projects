@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { useCart } from '../../Demo';
+import { useCart } from '../../cartContext';
 import './CartDropdown.css';
 
 interface CartDropdownProps {
@@ -34,7 +34,7 @@ export const CartDropdown = ({ isOpen, onToggle }: CartDropdownProps) => {
     <div className="cart-dropdown" ref={dropdownRef}>
       <div className="cart-header">
         <h3>Shopping Cart</h3>
-        <span className="cart-count">{cart.length} items</span>
+        <span className="cart-dropdown-count">{cart.length} items</span>
       </div>
       
       {cart.length === 0 ? (

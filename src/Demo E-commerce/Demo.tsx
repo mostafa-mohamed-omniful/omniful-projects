@@ -1,25 +1,9 @@
-import { useState, createContext, useContext } from 'react';
+import { useState } from 'react';
 import { NavBar } from "./components/NavBar/NavBar"
 import ProductsList from "./components/Products/Products"
 import { CartDropdown } from "./components/CartDropdown/CartDropdown"
+import { CartContext } from "./cartContext"
 import "./Demo.css"
-
-// Create cart context at the top level
-const CartContext = createContext<{
-  cart: string[];
-  addToCart: (title: string) => void;
-  removeFromCart: (index: number) => void;
-  clearCart: () => void;
-} | null>(null);
-
-// Custom hook to use cart context
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
-  }
-  return context;
-};
 
 // Separate CartProvider component
 const CartProvider = ({ children }: { children: React.ReactNode }) => {

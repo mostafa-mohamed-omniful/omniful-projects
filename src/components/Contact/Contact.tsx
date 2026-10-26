@@ -40,13 +40,16 @@ export const Contact = () => {
           }}
           whileTap={{ scale: 0.98 }}
         >
-          <h2 className="contact-list-title">Email</h2>
-          <motion.p
-            whileHover={{ color: "#f5f5dc" }}
-            transition={{ duration: 0.2 }}
-          >
-            mostafa12.official@gmail.com
-          </motion.p>
+          <a className="contact-link" href="mailto:mostafa12.official@gmail.com">
+            <h2 className="contact-list-title">Email</h2>
+            <motion.span
+              className="contact-value"
+              whileHover={{ color: "#f5f5dc" }}
+              transition={{ duration: 0.2 }}
+            >
+              mostafa12.official@gmail.com
+            </motion.span>
+          </a>
         </motion.li>
         
         <motion.li
@@ -60,23 +63,26 @@ export const Contact = () => {
           }}
           whileTap={{ scale: 0.98 }}
         >
-          <h2 className="contact-list-title">Phone</h2>
-          <motion.p
-            whileHover={{ color: "#f5f5dc" }}
-            transition={{ duration: 0.2 }}
-          >
-            +201067073657
-          </motion.p>
+          <a className="contact-link" href="tel:+201067073657">
+            <h2 className="contact-list-title">Phone</h2>
+            <motion.span
+              className="contact-value"
+              whileHover={{ color: "#f5f5dc" }}
+              transition={{ duration: 0.2 }}
+            >
+              +201067073657
+            </motion.span>
+          </a>
         </motion.li>
       </ul>
       
       {/* Add floating background elements */}
       <motion.div
-        className="floating-element"
+        className="contact-floating"
         style={{
           position: 'absolute',
-          top: '20%',
-          left: '10%',
+          top: '15%',
+          left: '8%',
           width: '20px',
           height: '20px',
           background: 'rgba(255, 255, 255, 0.1)',
@@ -100,11 +106,11 @@ export const Contact = () => {
       />
       
       <motion.div
-        className="floating-element"
+        className="contact-floating"
         style={{
           position: 'absolute',
-          top: '70%',
-          right: '15%',
+          top: '65%',
+          right: '12%',
           width: '15px',
           height: '15px',
           background: 'rgba(255, 255, 255, 0.08)',

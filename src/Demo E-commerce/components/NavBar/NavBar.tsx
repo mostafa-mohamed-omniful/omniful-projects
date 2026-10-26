@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import './NavBar.css'
-import { useCart } from "../../Demo"
+import { useCart } from "../../cartContext"
 
 interface NavBarProps {
   searchTerm: string;
@@ -15,7 +15,7 @@ export const NavBar = ({ searchTerm, onSearchChange, filterCategory, onFilterCha
     const { cart } = useCart();
     
     return (
-        <nav className="navbar">
+        <nav className="store-navbar">
             <Link className="title2" to="/demo">Tifa's Store</Link>
             <div className="search-box">
                 <input 
@@ -58,7 +58,7 @@ export const NavBar = ({ searchTerm, onSearchChange, filterCategory, onFilterCha
             >
                 🛒
             </button>
-            <p className="cart-count">{cart.length}</p>
+            <p className="cart-badge">{cart.length}</p>
             </div>
             </div>
         </nav>

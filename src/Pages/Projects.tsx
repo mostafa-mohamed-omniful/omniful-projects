@@ -102,7 +102,7 @@ export default function Projects() {
 
         {/* Floating background elements */}
         <motion.div
-          className="floating-element"
+          className="projects-floating"
           style={{
             position: 'absolute',
             top: '15%',
@@ -130,10 +130,10 @@ export default function Projects() {
         />
         
         <motion.div
-          className="floating-element"
+          className="projects-floating"
           style={{
             position: 'absolute',
-            top: '75%',
+            top: '65%',
             right: '12%',
             width: '20px',
             height: '20px',
