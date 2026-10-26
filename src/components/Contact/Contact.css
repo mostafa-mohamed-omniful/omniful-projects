@@ -57,7 +57,7 @@
 .contact-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; /* keep every card as wide as the widest one */
     justify-content: center;
     list-style: none;
     gap: 25px;
@@ -112,17 +112,7 @@
     color: #f5f5dc;
 }
 
-/* Add subtle icons using pseudo-elements */
-.contact-list li:first-child::before {
-    content: '✉️';
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-.contact-list li:last-child::before {
-    content: '📞';
+.contact-icon {
     font-size: 1.5rem;
     display: block;
     margin-bottom: 10px;
