@@ -1,145 +1,253 @@
 .work {
-    position: relative;
     overflow-x: clip;
-    background-color: var(--bg);
+    padding: clamp(64px, 7vw, 112px) 0 var(--section-gap);
 }
 
-/* Sits in the first stage's top-left corner, on its own ground. It is not pinned: it scrolls away before
-   the left half of a title rises past the middle, so it never covers one. */
 .work-heading {
-    position: absolute;
-    top: var(--margin);
-    left: var(--margin);
-    z-index: 3;
     margin: 0;
-    font-family: var(--font-text);
+    padding: 0 var(--margin);
+    font-size: var(--step-head);
+}
+
+.work-more-link {
+    margin: clamp(64px, 7vw, 96px) 0 0;
+    padding: 0 var(--margin);
     font-size: var(--step-lead);
-    font-weight: 600;
-    line-height: 1.2;
 }
 
-.work-heading span {
-    display: block;
-    padding: 8px 14px;
-    background-color: var(--bg);
-    color: var(--ink);
-}
-
-.work-project {
-    position: relative;
-    height: 150svh;
-}
-
-.work-stage {
-    position: sticky;
-    top: 0;
+.work-block {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100svh;
-    overflow: hidden;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: start;
+    margin-top: clamp(56px, 6vw, 96px);
+    padding: 0 var(--margin);
 }
 
-.work-pane {
-    position: relative;
-    overflow: hidden;
+.work-block + .work-block {
+    margin-top: clamp(112px, 11vw, 176px);
 }
 
-/* Taller than the pane by the travel distance, so the edges never show. */
-.work-pane img {
-    position: absolute;
-    top: -20svh;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 40svh);
-    object-fit: cover;
-    filter: brightness(0.4) contrast(1.1);
+.work figure {
+    margin: 0;
 }
 
-.work-stage {
-    --title-size: var(--step-display);
+.work figcaption {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: var(--step-small);
 }
 
 .work-title {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
+    margin: 0;
+    font-size: var(--step-head);
+}
+
+.work-tagline {
+    margin: 12px 0 0;
+    font-size: var(--step-lead);
+    font-weight: 500;
+}
+
+.work-description {
+    max-width: 44ch;
+    margin: 24px 0 0;
+}
+
+/* Three numbers in a row, set in the display face. */
+.work-facts {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0;
-    color: var(--ink);
-    font-size: var(--title-size);
-    text-align: center;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 640px;
+    margin: 36px 0 0;
 }
 
-.work-title-col {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+.work-facts dt {
+    font-size: clamp(2rem, 1.6rem + 1.4vw, 3rem);
+    line-height: 1;
 }
 
-/* Twice the column's width, so the text centres on the seam; the right copy is shifted one column left. */
-.work-title-text {
-    flex: none;
-    width: 200%;
-    padding: 0 var(--margin);
-    white-space: nowrap;
+.work-facts dd {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: var(--step-small);
+    line-height: 1.4;
 }
 
-.work-title-col-right .work-title-text {
-    margin-left: -100%;
+/* Features with a small square marker each; Blurt's fill two columns. */
+.work-features {
+    display: grid;
+    gap: 16px 40px;
+    margin: 40px 0 0;
+    padding: 0;
+    font-size: var(--step-small);
+    line-height: 1.5;
+    list-style: none;
 }
 
-/* Anchored to the foot of the stage, below the furthest point the travelling title halves reach. */
-.work-caption {
+.work-features li {
+    position: relative;
+    padding-left: 22px;
+}
+
+.work-features li::before {
+    content: '';
     position: absolute;
-    right: 0;
-    bottom: 40px;
+    top: 0.55em;
     left: 0;
-    z-index: 3;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background-color: var(--muted);
+}
+
+.work-blurt .work-features {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    max-width: 880px;
+}
+
+.work-built,
+.work-note {
+    max-width: 48ch;
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-size: var(--step-small);
+}
+
+.work-actions {
     display: flex;
-    justify-content: center;
-    padding: 0 var(--margin);
-    color: var(--ink);
-    text-align: center;
-    pointer-events: none;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-top: 32px;
 }
 
-.work-meta {
-    pointer-events: auto;
+/* Blurt: its own screens, in plain phone-shaped frames on the page. */
+.work-blurt {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: clamp(48px, 6vw, 112px);
 }
 
-/* The small text gets a solid ground so it never reads against the screenshots. */
-.work-meta {
+.work-blurt .work-description {
+    max-width: 52ch;
+}
+
+.work-phones {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 14px 24px 8px;
-    background-color: var(--surface);
+    align-items: flex-start;
+    gap: 24px;
 }
 
-.work-discipline {
-    max-width: 36ch;
-    margin: 0;
-    font-size: var(--step-body);
+.work-phone {
+    position: relative;
+    /* Blurt's own proportions, so its whole screen shows on any window height. */
+    width: calc(min(844px, 88svh) * 390 / 844);
+    aspect-ratio: 390 / 844;
+    overflow: hidden;
+    border-radius: 32px;
+    background-color: #0f0e16;
 }
 
-.site a.work-open {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    font-weight: 600;
+.work-phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.work-phone-live {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.work-phone-open {
+    display: none;
+}
+
+/* A third screen only on wide windows, where three phones fit at a size the live app works in. */
+@media screen and (max-width: 1599px) {
+    .work-phone-extra {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .work-blurt .work-phone {
+        width: min(calc(88svh * 390 / 844), calc((100vw - 700px) / 3));
+    }
+}
+
+/* Jackaroo: the game, large, on the page's margin. */
+.work-film {
+    grid-column: 1 / 9;
+}
+
+.work-film video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.work-jackaroo .work-text {
+    grid-column: 9 / 13;
+}
+
+@media screen and (max-width: 1100px) {
+    .work-block {
+        display: block;
+    }
+
+    /* The title leads on a tablet, so a phone's caption doesn't read as a label above it. */
+    .work-blurt {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .work-blurt .work-text {
+        order: -1;
+    }
+
+    .work-phones {
+        justify-content: center;
+        margin-top: 48px;
+    }
+
+    .work-phone {
+        width: min(390px, calc(50vw - 40px));
+    }
+
+    .work-jackaroo .work-text {
+        margin-top: 48px;
+    }
 }
 
 @media screen and (max-width: 760px) {
-    .work-stage {
-        --title-size: 10vw;
+    /* The phone's own screen comes first here. */
+    .work-blurt .work-text {
+        order: 0;
+        margin-top: 40px;
     }
 
-    .work-caption {
-        bottom: 24px;
+    /* One screen that opens the app, instead of an embedded one. */
+    .work-phone-still,
+    .work-phone-live,
+    .work-live-caption {
+        display: none;
     }
 
-    .work-meta {
-        padding: 12px 16px 6px;
+    .work-phone {
+        width: min(320px, 80vw);
+    }
+
+    .site a.work-phone-open {
+        display: block;
+        height: 100%;
+    }
+
+    .work-actions {
+        gap: 20px;
     }
 }

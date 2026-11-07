@@ -45,6 +45,21 @@
     margin: 32px 0 40px;
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 32px;
+}
+
+.site a.hero-cv {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+}
+
 /* The photograph is already cut to a circle, so it sits whole on the page, never enlarged past its own 614px. */
 .hero-photo {
     display: flex;
@@ -101,6 +116,10 @@
 
     .hero-main .site-button {
         width: 100%;
+    }
+
+    .site a.hero-cv {
+        margin: 0 auto;
     }
 
     .hero-photo img {

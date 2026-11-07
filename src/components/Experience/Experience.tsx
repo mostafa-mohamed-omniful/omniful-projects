@@ -23,28 +23,28 @@ export const Experience = () => {
 
   return (
     <section className="xp" id="experience" aria-labelledby="xp-heading">
-      <figure className="xp-figure">
+      <Reveal className="xp-head">
+        <h2 className="xp-heading site-display" id="xp-heading">Experience</h2>
+      </Reveal>
+
+      <div className="xp-figure">
         <div className="xp-frame">
           {roles.map((role, index) => (
             <img
               key={role.name}
               className={index === active ? 'is-active' : undefined}
-              src={role.picture.src}
-              alt={index === active ? role.picture.alt : ''}
+              src={role.logo.src}
+              alt={index === active ? `${role.name} logo` : ''}
               aria-hidden={index !== active}
               loading="lazy"
-              width={1200}
-              height={1500}
+              width={role.logo.width}
+              height={role.logo.height}
             />
           ))}
         </div>
-        <figcaption className="xp-caption">{roles[active].picture.caption}</figcaption>
-      </figure>
+      </div>
 
       <div className="xp-body">
-        <Reveal>
-          <h2 className="xp-heading site-display" id="xp-heading">Experience</h2>
-        </Reveal>
         <ul className="xp-list">
           {roles.map((role, index) => (
             <li

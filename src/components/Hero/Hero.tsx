@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import portrait from '../../assets/Profile.png';
+import portrait from '../../assets/profile.webp';
 import { contact } from '../../content';
 import './Hero.css';
 
@@ -27,12 +27,12 @@ export const Hero = () => {
       <div className="hero-body">
         <div className="hero-main">
           <motion.h1 className="hero-title site-display" {...enter(1)}>
-            React apps, built in Cairo
+            Software, built in Cairo
           </motion.h1>
           <motion.p className="hero-lead" {...enter(2)}>
             I’m Mostafa Mohamed, a Computer Science student at the German University in Cairo, taking on freelance front-end work.
           </motion.p>
-          <motion.div {...enter(3)}>
+          <motion.div className="hero-actions" {...enter(3)}>
             <a className="site-button" href={`mailto:${contact.email}`}>
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
                 <path d="M2.5 5h15v10h-15zM2.5 5.5 10 11l7.5-5.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
@@ -41,6 +41,12 @@ export const Hero = () => {
               <svg className="site-button-arrow" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
                 <path d="M3 9h11M9.5 4 14.5 9l-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" />
               </svg>
+            </a>
+            <a className="hero-cv" href={contact.cv} download>
+              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                <path d="M9 2.5v9M4.5 7.5 9 12l4.5-4.5M3 15.5h12" fill="none" stroke="currentColor" strokeWidth="1.6" />
+              </svg>
+              Download CV
             </a>
           </motion.div>
         </div>

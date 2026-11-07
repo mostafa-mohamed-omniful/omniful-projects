@@ -8,6 +8,7 @@ const details = [
   { label: 'Phone', value: contact.phone, href: `tel:${contact.phone}` },
   { label: 'GitHub', value: 'github.com/12tifa12', href: contact.github },
   { label: 'LinkedIn', value: 'linkedin.com/in/mostafa-mohamed', href: contact.linkedin },
+  { label: 'CV', value: 'Download the PDF', href: contact.cv, download: true },
 ];
 
 export const Contact = () => {
@@ -59,6 +60,7 @@ export const Contact = () => {
                 <dd>
                   <a
                     href={detail.href}
+                    download={'download' in detail ? '' : undefined}
                     {...(detail.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
                   >
                     {detail.value}
